@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/admin/css/main.css">
+</head>
+<body>
+    <a href = 'http://www.fengzhiyong1995.com/强制横屏.html' target='_blank'>点击</a>
+    {{include './common/template.art'}}
+</body>
+<script src="/admin/js/main.js"></script>
+</html>

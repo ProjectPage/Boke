@@ -1,0 +1,81 @@
+em,
+i{
+    font-style: normal;
+}
+textarea,
+input{
+    background-color: none;
+}
+*{
+    margin: 0;padding: 0;
+}
+a{
+    color: #333333;text-decoration: none;
+}
+ul,ol{
+    list-style: none;
+}
+.width-left{
+    width: 23%;background-color: cornsilk;
+}
+.width-right{
+    width: 77%;
+}
+/* 头部 */
+header{
+    height: 60px;display: flex;align-items: center;justify-content: space-between;
+    position: fixed;width: 100%;z-index: 2;box-shadow: 0 0px 3px rgb(202, 202, 202);
+}
+.user-logo{
+    font-size: 30px;background-color: rgb(53, 106, 204);
+    color: #fff;text-align: center;height: inherit;line-height: 60px;
+}
+.user-logo a{
+    color: #fff;
+}
+.user-logo span{
+    font-size: 16px;margin-left: 5px;
+}
+.user-center{
+    background-color: #fff;height: 60px;
+}
+.user-center i{
+    margin: 0 3px 0 797px;line-height: 60px;
+}
+/* 导航 */
+.user{
+    display: flex;position: relative;
+}
+section .nav{
+    background-color: rgb(44, 44, 66);height: 100vh;padding: 100px 0 0;
+    font-size: 14px;color: #fff;position: relative;box-sizing: border-box;
+}
+.nav li{
+    width: 100%;padding: 10px 20px;box-sizing: border-box;
+}
+.nav li a{
+    display: block;width: 100%;box-sizing: border-box;color: #fff;
+}
+.nav .border-left-356acc-0{
+    border-left: 4px solid #356acc00;
+}
+.nav .border-left-356acc-1{
+    border-left: 4px solid #356acc;
+}
+.nav li span{
+    margin-right: 10px;
+}
+.nav li:last-child{
+    position: absolute;bottom: 0;background-color: rgb(33, 33, 43);
+    text-align: center;font-size: 12px;
+}
+.nav li:last-child span{
+    color: rgb(59, 119, 250);
+}
+section .user-new{
+    background-color: rgb(231, 231, 231);padding: 80px 20px 0;box-sizing: border-box;
+}
+/* form text:focus,
+form input:focus{
+    border: 1px solid rgb(157, 88, 247);
+} */

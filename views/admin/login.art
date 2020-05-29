@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端项目-博客管理员登录</title>
+    <link rel="stylesheet" href="/admin/css/common.css">
+    <link rel="stylesheet" href="/admin/css/login.css">
+</head>
+<body>
+    <section class="login">
+        <h5>前端项目-博客管理员登录</h5>
+        <form action="/admin/login" method="post">
+            <i class="form_text">邮箱</i><br>
+            <input type="email" name="email" id="email" placeholder="请输入邮箱地址" required><br>
+            <i class="form_text">密码</i><br>
+            <input type="password" name="password" id="password" placeholder="请输入密码 " required><br>
+            <input type="submit" value="登录">
+        </form>
+    </section>
+</body>
+<script src="/admin/js/login.js"></script>
+</html>

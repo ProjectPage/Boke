@@ -1,0 +1,51 @@
+.user-new .user-new-mine{
+    display: flex;justify-content: space-between;align-items: flex-end;
+}
+.user-new-mine h5{
+    font-size: 20px;font-weight: 600;
+}
+.user-new-mine p{
+    font-size: 12px;
+}
+.user-new-mine .add-user{
+    padding: 5px 10px;background-color: rgb(69, 97, 158);color: #fff;font-size: 12px;
+    border-radius: 2px;box-sizing: border-box;letter-spacing: 1px;display: block;
+}
+.user-new .user-list{
+    background-color: rgb(214, 214, 214);width: 100%;
+    margin: 10px 0;text-align: left;
+}
+.user-list tr:nth-child(odd){
+    background-color: rgb(240, 240, 240);
+}
+.user-list tr:nth-child(even){
+    background-color: rgb(231, 231, 231);
+}
+.user-new th{
+    font-weight: 600;font-size: 14px;padding: 5px 6px;box-sizing: border-box;
+}
+.user-new td{
+    padding: 5px 8px;box-sizing: border-box;font-size: 12px;
+}
+.user-new td a:first-child{
+    margin-right: 5px;color: rgb(61, 114, 230);
+}
+.user-new td em{
+    cursor: pointer;
+}
+/* 分页器 */
+.user-new .user-new-fenye{
+    display: inline-block;height: 30px;
+    line-height: 30px;text-align: center;
+}
+.user-new-fenye a{
+    display: inline-block;padding: 0 10px;box-sizing: border-box;
+    border: 1px solid rgb(206, 206, 206);
+}
+.user-new-fenye .displayNone{
+    display: none;
+}
+.user-new-fenye .select-fenye{
+    background-color: rgb(241, 241, 241);
+}
+

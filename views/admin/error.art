@@ -1,0 +1,18 @@
+{{extend './common/layout.art'}}
+{{block 'content'}}
+    <p class = 'error'>{{message}}</p>
+{{/block}}
+{{block 'style'}}
+    <style>
+        .error{
+            text-align:center;width:80%;margin:20px auto;
+        }
+    </style>
+{{/block}}
+{{block 'script'}}
+    <script>
+        setTimeout(()=>{
+            location.href = '/admin/login'
+        },3000)
+    </script>
+{{/block}}

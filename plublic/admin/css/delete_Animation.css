@@ -1,0 +1,59 @@
+/* 隐藏表单/ */
+.hidden{
+    width: 800px;background-color: rgb(245, 245, 245);
+    position: absolute;top: -200px;z-index: 3;transform: translate3d(0,0,0);
+    left: 50%;margin-left: -400px;padding: 10px 8px;
+    box-sizing: border-box;border-radius: 5px;box-shadow: 0 0 3px rgba(0, 0, 0, 0.527);
+    transition: .4s;
+}
+.hidden-animation{
+    animation:hidden-animation .5s ease forwards;
+}
+.hidden-show-animation{
+    animation: hidden-show-animation .5s ease forwards;
+}
+.hidden .hidden-head{
+    display: flex;justify-content: space-between;align-items: center;
+    background-color: rgba(65, 105, 225, 0);
+}
+.hidden-head h5{
+    font-weight: 540;font-size: 16px;padding: 10px 0;
+}
+
+.hidden .hidden-mid{
+    background-color: rgba(238, 199, 195, 0);height: 60px;line-height: 60px;
+    box-sizing: border-box;border-top: 1px solid rgba(0, 0, 0, 0.137);border-bottom: 1px solid rgba(0, 0, 0, 0.144);
+    margin: 10px 0 10px;font-size: 14px;
+}
+.hidden .hidden-bottom{
+    height: 30px;
+}
+
+.hidden-bottom .hidden-bottom-exit,.hidden-bottom input[type="submit"]{
+    float: right;height: inherit;line-height: 30px;font-size: 12px;color: #fff;
+    padding: 0 10px;background-color: rgb(47, 124, 197);border: none;border-radius: 2px;cursor: pointer;
+}
+.hidden-bottom .hidden-bottom-exit{
+    display: block;margin-right: 5px;background-color: rgb(224, 224, 224);color: black;
+}
+
+@keyframes hidden-show-animation{
+    0%{
+        transform: translate(0,0px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0,235px);
+        opacity: 1;
+    }
+}
+@keyframes hidden-animation{
+    0%{
+        transform: translate(0,0);
+        opacity: 1;
+    }
+    100%{
+        transform: translate(0,-200px);
+        opacity: 0;
+    }
+}

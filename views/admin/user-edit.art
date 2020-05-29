@@ -1,0 +1,42 @@
+{{extend './common/layout.art'}}
+{{block 'content'}}
+    <header>
+        <h1 class="user-logo width-left"><a href="/admin/user">黑马程序员<span>ITHEMA</span></a></h1>
+        <div class="width-right user-center"><i>{{userinfo?userinfo:'未登录'}}</i><em class="iconfont icon-xiajiantou"></em></div>
+    </header>
+    <section class='user'>
+        <ul class="width-left nav">
+            <li class="border-left-356acc-1"><a href="/admin/user"><span class="iconfont icon-yonghu"></span>用户管理</a></li>
+            <li class="border-left-356acc-0"><a href="/admin/article"><span class="iconfont icon-jiaoyi"></span>文章管理</a></li>
+            <li>made in <span>FENGZHIYONG</span></li>
+        </ul>
+        <div class="width-right user-new">
+            <p class="user-id {{@_id?'':'displayNone'}}" >{{@_id}}</p>
+            <p class="error-message {{displayBlock?displayBlock:''}}">{{message?message:"错误信息"}}</p>
+            <form action={{host}} method="post">
+                <label>用户名</label><br>
+                <input type="text" name="username"  placeholder="请输入用户名" value={{username?username:""}} ><br>
+                <label>邮箱</label><br>
+                <input type="email" name="email"  placeholder="请输入密码" value={{email?email:"" }} ><br>
+                <label>密码</label><br>
+                <input type="password" name="password"  placeholder="请输入密码"><br>
+                <label>角色</label><br>
+                <select name="role" >
+                    <option value="normal" {{role === 'normal'?'selected':''}}>普通用户</option>
+                    <option value="admin" {{role === 'admin'?'selected':''}}>超级管理员</option>
+                </select><br>
+                <label>状态</label><br>
+                <select name="statu" >
+                    <option value="1" {{statu === 1?'selected':''}}>开启</option>
+                    <option value="0" {{statu === 0?'selected':''}}>禁用</option>
+                </select><br>
+                <input type="submit" value={{submit}}>
+            </form>
+        </div>
+    </section>
+{{/block}}
+{{block 'style'}}
+    <link rel="stylesheet" href="/admin/css/common.css">
+    <link rel="stylesheet" href="/admin/css/user-edit.css">
+    <link rel="stylesheet" href="/admin/css/iconfont.css">
+{{/block}}
