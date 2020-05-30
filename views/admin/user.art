@@ -1,0 +1,84 @@
+{{extend './common/layout.art'}}
+{{block 'style'}}
+    <link rel="stylesheet" href="/admin/css/common.css">
+    <link rel="stylesheet" href="/admin/css/user.css">
+    <link rel="stylesheet" href="/admin/css/iconfont.css">
+    <link rel="stylesheet" href="/admin/css/delete_Animation.css">
+{{/block}}
+{{block 'content'}}
+    <header>
+        <h1 class="user-logo width-left"><a href="#">黑马程序员<span>ITHEMA</span></a></h1>
+        <div class="width-right user-center"><i>{{username}}</i><em class="iconfont icon-xiajiantou"></em></div>
+    </header>
+    <section class="user">
+        <ul class="width-left nav">
+            <li class='border-left-356acc-1'><a href='/admin/user'><span class="iconfont icon-yonghu"></span>用户管理</a></li>
+            <li class='border-left-356acc-0'><a href='/admin/article'><span class="iconfont icon-jiaoyi"></span>文章管理</a></li>
+            <li>made in <span>FENGZHIYONG</span></li>
+        </ul>
+        <div class="width-right user-new">
+            <div class="user-new-mine">
+                <div>
+                    <h5>用户</h5>
+                    <p>共找到<span>{{count}}</span>个用户</p>
+                </div>
+                <a href ='/admin/user-edit' class="add-user">新增用户</a>
+            </div>
+            <table class='user-list' cellspacing='1' border="0">
+                <tr>
+                    <th>ID</th>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                    <th>角色</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                {{each user}}
+                    <td>{{@$value._id}}</td>
+                    <td>{{$value.username}}</td>
+                    <td>{{$value.email}}</td>
+                    <td>{{$value.role === 'admin'?'超级管理员':'普通用户'}}</td>
+                    <td>{{$value.statu === 1?'开启':'禁用'}}</td>
+                    <td><a href = '/admin/user-modify?id={{@$value._id}}' class="iconfont icon-bianji"></a><em class="iconfont icon-shanchu delte"></em></td>
+                </tr>
+                {{/each}}
+            </table>
+            <span class="user-new-fenye">
+            {{if selectPage <= 1}}
+                <a href="/admin/user?page={{}}" class='displayNone'>&lt;</a>
+                {{else}}
+                    <a href="/admin/user?page={{selectPage - 1}}" class=''>&lt;</a>
+            {{/if}}
+                <%for(let i = 1;i<=fenyeSize;i++){%>
+                    <%if(selectPage === i){%>
+                        <a href="/admin/user?page=<%=i%>"><%=i%></a>
+                    <%}else{%>
+                        <a href="/admin/user?page=<%=i%>" class='select-fenye'><%=i%></a>
+                <%}}%>
+            {{if selectPage >= fenyeSize}}
+                <a href="/admin/user?page={{}}" class='displayNone'>&gt;</a>
+                {{else}}
+                    <a href="/admin/user?page={{selectPage - 0 + 1}}" class=''>&gt;</a>
+            {{/if}}
+            </span>
+        </div>
+        <div class="hidden">
+            <div class="hidden-head">
+                <h5>请确认</h5><i class="iconfont icon-shanchu exit"></i>
+            </div>
+            <p class="hidden-mid">
+                您确认要删除这个用户吗?
+            </p>
+            <div class="hidden-bottom">
+                <form action="/admin/user-delete" method="post">
+                    <input type="hidden" name="hidden_value" value="">            
+                    <input type="submit" value="确认">
+                    <i class="hidden-bottom-exit">取消</i>
+                </form>
+            </div>
+        </div>
+    </section>
+{{/block}}
+{{block 'script'}}
+    <script src="/admin/js/delete.js"></script>
+{{/block}}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户界面</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/user.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+<body>
+    <header>
+        <h1 class="user-logo width-left"><a href="#">黑马程序员<span>ITHEMA</span></a></h1>
+        <div class="width-right user-center"><i>冯志勇1995</i><em class="iconfont icon-xiajiantou"></em></div>
+    </header>
+    <section>
+        <ul class="width-left nav">
+            <li class="border-left-356acc-1"><a href="/admin/user"><span class="iconfont icon-yonghu"></span>用户管理</a></li>
+            <li class="border-left-356acc-0"><a href=""><span class="iconfont icon-jiaoyi"></span>交易管理</a></li>
+            <li>made in <span>FENGZHIYONG</span></li>
+        </ul>
+        <div class="width-right user-new">
+            <div class="user-new-mine">
+                <div>
+                    <h5>用户</h5>
+                    <p>共找到<span></span>个用户</p>
+                </div>
+                <div class="add-user">添加用户</div>
+            </div>
+            <table class='user-list' cellspacing='1' border="0">
+                <tr>
+                    <th>ID</th>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                    <th>角色</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>sdfsds2sdfsa</td>
+                    <td>冯志勇1995</td>
+                    <td>2117538193@qq.com</td>
+                    <td>管理员</td>
+                    <td>正常</td>
+                    <td><i class="iconfont icon-bianji"></i><em class="iconfont icon-shanchu delte"></em></td>
+                </tr>
+            </table>
+            <span class="user-new-fenye">
+                <a href="#">&lt;</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">&gt;</a>
+            </span>
+        </div>
+        <div class="hidden">
+            <div class="hidden-head">
+                <h5>请确认</h5><i class="iconfont icon-shanchu exit"></i>
+            </div>
+            <p class="hidden-mid">
+                您确认要删除这个用户吗?
+            </p>
+            <div class="hidden-bottom">
+                <form action="" method="post">
+                    <input type="hidden" name="hidden_value" value="">            
+                    <input type="submit" value="确认">
+                    <i class="hidden-bottom-exit">取消</i>
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <input type="file" name="" id="file">
+</body>
+<style>
+    input{
+        height: 30px;display: block;
+    }
+</style>
+<script>
+    var filefile = document.querySelector('#file');
+    filefile.onchange = async function(){
+        var file = new FileReader();
+        await file.readAsDataURL(this.files[0]);
+        file.onload = function(){
+            console.log(file,file.result)
+        }
+        
+    }
+
+
+</script>
+<script src="./js/user.js">
+</script>
+</html>

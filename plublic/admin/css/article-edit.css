@@ -1,0 +1,40 @@
+.user-new .user-id{
+    font-size: 25px;font-weight: 550;
+}
+.user-new .displayNone{
+    display: none;
+}
+.user-new .error-message{
+    height: 30px;line-height: 30px;background-color: rgb(245, 145, 127);
+    padding: 0 10px;box-sizing:border-box;margin: 10px 0 0;font-size: 12px;
+    display: none;
+}
+.user-new .displayBlock{
+    display: block;
+}
+.user-new form{
+    background-color: #fff;font-size: 14px;padding: 10px 10px 20px;box-sizing: border-box;
+    margin-top: 10px;
+}
+.user-new label{
+    font-weight: 550;
+}
+.user-new select,
+.user-new input{
+    width: 100%;height: 30px;border-radius: 4px;padding: 0 10px;box-sizing: border-box;
+    border: 1px solid rgb(235, 235, 235);margin: 5px 0 6px;
+}
+.user-new input[type='submit']{
+    width: 50px;background-color: rgb(36, 90, 207);color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);border: none;cursor: pointer;
+}
+.user-new input[type='file']{
+    height: 40px;padding: 10px 10px 0px;box-sizing: border-box;border: none;
+}
+.user-new textarea{
+    width: 100%;height: 100px;border-radius: 4px;box-sizing: border-box;padding: 5px 10px;
+}
+.preview{
+    height: 50px; width: auto;display: block;margin:0 0 10px 10px;
+}
+

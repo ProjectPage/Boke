@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户界面</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/user-edit.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+<body>
+    <header>
+        <h1 class="user-logo width-left"><a href="#">黑马程序员<span>ITHEMA</span></a></h1>
+        <div class="width-right user-center"><i>冯志勇1995</i><em class="iconfont icon-xiajiantou"></em></div>
+    </header>
+    <section class="user">
+        <ul class="width-left nav">
+            <li class="border-left-356acc-1"><span class="iconfont icon-yonghu"></span>用户管理</li>
+            <li class="border-left-356acc-0"><span class="iconfont icon-jiaoyi"></span>交易管理</li>
+            <li>made in <span>FENGZHIYONG</span></li>
+        </ul>
+        <div class="width-right user-new">
+            <p class="user-id">5ecd22a6daf05a00d4f5aeb2</p>
+            <p class="error-message">错误信息</p>
+            <form action="/admin/user-edit" method="post">
+                <label>用户名</label><br>
+                <input type="text" name="username" id="" placeholder="请输入用户名"><br>
+                <label>邮箱</label><br>
+                <input type="email" name="email" id="" placeholder="请输入邮箱"><br>
+                <label>密码</label><br>
+                <input type="password" name="password" id="" placeholder="请输入密码"><br>
+                <label>角色</label><br>
+                <select name="role" id="">
+                    <option value="normal">普通用户</option>
+                    <option value="admin" selected>超级管理员</option>
+                </select><br>
+                <label>状态</label><br>
+                <select name="statu" id="">
+                    <option value="1">开启</option>
+                    <option value="0">禁用</option>
+                </select><br>
+                <input type="submit" value="提交">
+            </form>
+        </div>
+
+    </section>
+</body>
+<script>
+</script>
+</html>

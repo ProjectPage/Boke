@@ -1,0 +1,42 @@
+{{extend './common/layout.art'}}
+{{block 'content'}}
+        <header>
+        <h1 class="user-logo width-left"><a href="#">黑马程序员<span>ITHEMA</span></a></h1>
+        <div class="width-right user-center"><i>{{userinfo.username}}</i><em class="iconfont icon-xiajiantou"></em></div>
+    </header>
+    <section class="user">
+        <ul class="width-left nav">
+            <li class="border-left-356acc-0"><a href="/admin/user"><span class="iconfont icon-yonghu"></span>用户管理</a></li>
+            <li class="border-left-356acc-1"><a href=""><span class="iconfont icon-jiaoyi"></span>交易管理</a></li>
+            <li>made in <span>FENGZHIYONG</span></li>
+        </ul>
+        <div class="width-right user-new">
+            <p class="error-message">错误信息</p>
+            <form action="/admin/article-edit" method="post" enctype="multipart/form-data">
+                <label>标题</label><br>
+                <input type="text" name="title"  placeholder="请输入文章标题"><br>
+                <label>作者</label><br>
+                <input type="text" name="author" readonly value={{userinfo.username}}><br>
+                <label>发布时间</label><br>
+                <input type="date" name="date"><br>
+                <label>文章封面</label><br>
+                <input type="file" name="cover" id="file"><br>
+                <div class = 'img'>
+                    <img src="" class='preview'/>
+                </div>
+                <label>内容</label><br>
+                <textarea name="content" cols="30" rows="10"></textarea><br>
+                <input type="submit" value="提交">
+        </div>
+    </section>
+{{/block}}
+
+{{block 'style'}}
+    <link rel="stylesheet" href="/admin/css/common.css">
+    <link rel="stylesheet" href="/admin/css/article-edit.css">
+    <link rel="stylesheet" href="/admin/css/iconfont.css">
+{{/block}}
+
+{{block 'script'}}
+    <script src='/admin/js/article-edit.js'></script>
+{{/block}}
