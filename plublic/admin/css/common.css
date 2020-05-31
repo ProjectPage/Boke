@@ -79,3 +79,16 @@ section .user-new{
 form input:focus{
     border: 1px solid rgb(157, 88, 247);
 } */
+
+
+/* 退出登录 */
+.exit{
+    position: fixed;right: 185px;top: 30px;z-index: 2;font-size: 14px;
+    transition: .4s ease;transform: translate3d(0,0,0);opacity: 0;
+}
+.exit li{
+    padding: 5px 10px;background-color: rgb(201, 201, 201);
+}
+.position{
+    top:60px;opacity: 1;
+}

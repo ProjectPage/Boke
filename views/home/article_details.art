@@ -1,0 +1,40 @@
+
+{{extend './common/layout.art'}}
+{{block 'link'}}
+    <link rel="stylesheet" href="/home/css/common.css">
+    <link rel="stylesheet" href="/home/css/article_details.css">
+{{/block}}
+
+{{block 'content'}}
+    <section>
+        <div class="sameWidth content">
+            <div class="title">
+                <h2>{{articleXinxi.title}}</h2>
+                <i class="author color_336b37">{{articleXinxi.author.username}}</i><em class="date">{{dateformat(articleXinxi.author.date,"yyyy-mm-dd")}}</em>
+            </div>
+            <p class="content_text">{{@articleXinxi.content.replace(/\n\r/g,'')}}
+            </p>
+            <div class="comment">
+                <h5>评论</h5>
+                <form action="/home/article_comment" method="post">
+                    <input type="hidden" name="aId" value = {{@articleXinxi._id}}>
+                    <input type="hidden" name="uId" value = {{@userCookie?userCookie._id:''}}>
+                    <textarea name="comment"  cols="30" rows="10" required></textarea>
+                    <input type="submit" value="提交">
+                </form>
+            </div>
+            {{each commentXinxi}}
+                <div class="comment_new {{$index === '0'?comment_first:''}}">
+                    <ul>
+                        <li class="color_336b37">{{$value.uId.username}}</li>
+                        <li></li>
+                        <li>{{dateformat($value.uId.date,"yyyy-mm-dd")}}</li>
+                        <li></li>
+                        <li>{{$value.uId.email}}</li>
+                    </ul>
+                    <p class="conment_text">{{$value.comment}}</p>
+                </div>
+            {{/each}}
+        </div>
+    </section>
+{{/block}}

@@ -1,3 +1,6 @@
 module.exports = (req,res)=>{
-    res.render('admin/login',{})
+    // if(req.query.home){
+    //     return res.redirect('/home');
+    // }
+    return res.render('admin/login',{id:req.query.id,url:req.query.url})
 }

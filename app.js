@@ -7,7 +7,8 @@ const bodyParser = require('body-parser');
 // 加载express-session第三方模块来处理登陆状态
 const session = require('express-session');
 
-
+//加载第三方模块morgan
+const morgan = require('morgan');
 
 //创建网站服务器
 const app = express();
@@ -16,14 +17,23 @@ app.use(bodyParser.urlencoded({extended:false}));
 //开放静态资源
 app.use(express.static(path.join(__dirname,'plublic')));
 // 配置session
-app.use(session({secret:"secret key"}));
+app.use(session({
+    secret:"secret key",
+    saveUninitialized:false,
+    cookie:{
+        maxAge:24*60*60*1000
+    }
+}));
 
-
-
+// 获得当前电脑里的系统环境变量
+console.log(process.env.NODE_ENV);
+// 拦截请求，用Morgan模块拿到参数
+// app.use(morgan('dev'));
 //数据处理
 require('./model/connects')
 require('./model/user');
 require('./model/article');
+require('./model/comment');
 
 //设置默认的模板位置
 app.set('views',path.join(__dirname,'views'));

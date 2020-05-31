@@ -1,0 +1,64 @@
+.articleList::after{
+    content: '';display: block;clear: both;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+section{
+    padding-bottom: 200px;
+}
+
+/* 文章列 */
+.articleList li{
+    width: 45%;background-color: #fff;margin-top: 30px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.178);
+}
+.articleList li:nth-child(odd){
+    float: left;
+}
+.articleList li:nth-child(even){
+    float: right;
+}
+.articleList .cover{
+    width: 100%;overflow: hidden;background-color: aqua
+}
+.cover img{
+    height: 200px;vertical-align: top;max-height: 200px;
+}
+.articleList .article_text{
+    padding: 10px 10px 20px;
+}
+.articleList .title{
+    font-size: 20px;font-weight: 600;text-overflow: ellipsis;
+    overflow: hidden;word-break: keep-all;margin:3px 0
+}
+.article_text .date,
+.article_text .author{
+    font-size: 12px;
+}
+.article_text .author{
+    color: brown;
+}
+.article_text .author::after{
+    content:'';display: inline-block;width: 1px;height: 10px;
+    background-color: black;margin: 0 5px;
+}
+.article_text .content{
+    font-size: 12px;text-indent: 1em;margin-top: 10px;height: 150px;
+    line-height: 1.5em;overflow: hidden;max-height: 100px;
+}
+
+/* 分页 */
+.fenYe{
+    text-align: center;margin-top: 50px;
+}
+.fenYe a{
+    display:inline-block;padding: 5px 10px;background-color: rgb(172, 172, 172);box-sizing: border-box;
+    font-size: 12px;color: #fff;
+}
+.fenYe .select{
+    background-color: rgb(255, 117, 75);
+}

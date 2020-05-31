@@ -11,14 +11,14 @@ module.exports = async (req,res,next)=>{
             content:filed.content
         });
         if(isTrue){
-            Article.create({
+            await Article.create({
                 title:filed.title,
                 author:req.session.userinfo._id,
                 content:filed.content,
                 cover:files.cover.path.split('plublic')[1],
                 data:filed.date
-            }).then(result =>{},error=>{});
-            return res.redirect('/admin/article');
+            }).then(result =>{return res.redirect('/admin/article')}).catch(error=>console.log('添加失败',error));
+            
         }
         else{
             return next(JSON.stringify({path:'/admin/article-edit',message:'输入不符合规则'}))

@@ -7,9 +7,12 @@
 {{/block}}
 {{block 'content'}}
     <header>
-        <h1 class="user-logo width-left"><a href="#">黑马程序员<span>ITHEMA</span></a></h1>
+        <h1 class="user-logo width-left"><a href="/home">黑马程序员<span>ITHEMA</span></a></h1>
         <div class="width-right user-center"><i>{{username}}</i><em class="iconfont icon-xiajiantou"></em></div>
     </header>
+    <ul class="exit">
+        <li><a href="/admin/exit?is=1">退出登录</a></li>
+    </ul>
     <section class="user">
         <ul class="width-left nav">
             <li class='border-left-356acc-1'><a href='/admin/user'><span class="iconfont icon-yonghu"></span>用户管理</a></li>
@@ -34,6 +37,7 @@
                     <th>操作</th>
                 </tr>
                 {{each user}}
+                <tr>
                     <td>{{@$value._id}}</td>
                     <td>{{$value.username}}</td>
                     <td>{{$value.email}}</td>

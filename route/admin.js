@@ -34,6 +34,9 @@ admin.post('/article-edit',require('./admin/article-edit-form'));
 admin.get('/article-modify',require('./admin/article-modify'));
 admin.post('/article-modify',require('./admin/article-modify-form'));
 // 文章删除路由
-admin.post('/article-delete',require('./admin/article-delete-form'))
+admin.post('/article-delete',require('./admin/article-delete-form'));
+
+// 退出登录
+admin.get('/exit',require('./admin/exit'));
 
 module.exports = admin

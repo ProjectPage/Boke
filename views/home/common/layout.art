@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    {{block 'link'}}
+    {{/block}}
+</head>
+<body>
+    <header>
+        <div class="sameWidth head">
+            <h1><a href="/home"><img src="./images/logo.png" alt="黑马程序员"></a>黑马程序员</h1>
+            <div class="head_home_login">
+                <a href="/home" class="home bgc">首页</a><a href="{{userinfo?'':'/admin/login?url=home'}}" class="login">{{userinfo?userinfo.username:"登录"}}</a><a href="/admin/exit" class="{{userinfo?"":"displayNone"}}">退出登录</a>
+            </div>
+        </div>
+    </header>
+    {{block 'content'}}{{/block}}
+</body>
+    {{block 'script'}}{{/block}}
+</html>

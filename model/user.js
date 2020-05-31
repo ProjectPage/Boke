@@ -30,7 +30,7 @@ const userSchema =  new mongoose.Schema({
      }
  })
 //  对某个集合使用规则
-const User = mongoose.model('Boke',userSchema);
+const User = mongoose.model('User',userSchema);
 // 设置验证请求参数规则
 const validateRule = user => {
     const schema = {
@@ -43,6 +43,8 @@ const validateRule = user => {
 // 对参数进行排查
 return Joi.validate(user,schema);
 }
+
+
 
 module.exports = {
     User,

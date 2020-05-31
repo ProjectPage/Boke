@@ -9,5 +9,21 @@
 <body>
    {{block 'content'}} {{/block}}
 </body>
+<script>
+var exit = document.querySelector('.exit');
+var em = document.querySelector('header em');
+em.onclick = function(){
+    getClassList = exit.classList;
+    if(getClassList[1]){
+        exit.classList.remove('position');
+    }
+    else{
+        exit.classList.add('position')
+    }
+
+    
+    
+}
+</script>
 {{block 'script'}}{{/block}}
 </html>

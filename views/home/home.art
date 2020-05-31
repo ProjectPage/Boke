@@ -1,0 +1,39 @@
+{{extend './common/layout.art'}}
+{{block 'link'}}
+    <link rel="stylesheet" href="/home/css/common.css">
+    <link rel="stylesheet" href="/home/css/home.css">
+{{/block}}
+{{block 'content'}}
+    <section>
+        <div class="sameWidth">
+            <ul class="articleList">
+            {{each articleContent.records}}
+                <li>
+                    <div class="cover"><a href="/home/article_details?id={{@$value._id}}"><img src="{{$value.cover}}" alt=""></a></div>
+                    <div class="article_text">
+                        <a href="/home/article_details?id={{@$value._id}}">
+                            <h2 class="title">{{@$value.title}}</h2>
+                            <i class="author">{{$value.author.username}}</i><em class="date">{{dateformat($value.date,"yyyy-mm-dd")}}</em>
+                            <p class="content">{{@$value.content.trim().replace(/[\r\n\s]/g,'').substr(0,160) + '...'}}</p>
+                        </a>
+                    </div>
+                </li>
+            {{/each}}
+            </ul>
+            <div class="fenYe">
+                <span>
+                {{if articleContent.page > 1}}
+                    <a href="/home?page={{articleContent.page - 1}}">上一页</a>
+                {{/if}}
+                {{each articleContent.display}}
+                    <a href="/home?page={{$value}}" class={{articleContent.page === $value?"select":""}}>{{$value}}</a>
+                {{/each}}
+                {{if articleContent.page < articleContent.display[articleContent.display.length - 1]}}
+                    <a href="/home?page={{articleContent.page - 0 + 1}}">下一页</a>
+                {{/if}}
+
+                </span>
+            </div>
+        </div>
+    </section>
+{{/block}}
